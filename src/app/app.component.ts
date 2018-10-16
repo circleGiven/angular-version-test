@@ -1,5 +1,6 @@
 import {Component, ElementRef} from '@angular/core';
 import {TestService} from "./test.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -8,9 +9,16 @@ import {TestService} from "./test.service";
 })
 export class AppComponent {
 
-  public inputTest: string;
+  constructor(private testService: TestService,
+              private router: Router) {
 
-  constructor(private testService: TestService) {
+  }
 
+  public onClickName(): void {
+    this.router.navigate(['/name']);
+  }
+
+  public onClickJob(): void {
+    this.router.navigate(['/job']);
   }
 }

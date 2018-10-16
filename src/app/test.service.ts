@@ -16,6 +16,9 @@ console.log('TestService 가 번들됨');
   }
 )
 export class TestService {
+
+  public name: string;
+
   constructor() {
     console.log('TestService construct');
   }
