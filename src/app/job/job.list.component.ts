@@ -1,4 +1,5 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
+import {NameService} from "../service/name.service";
 /**
  * File Name   : job.list.component
  *
@@ -13,6 +14,15 @@ import {Component} from "@angular/core";
   selector: 'app-job-list',
   templateUrl: './job.list.component.html'
 })
-export class JobListComponent {
+export class JobListComponent implements OnInit {
 
+  public name: string;
+
+  constructor(private nameService: NameService) {
+
+  }
+
+  ngOnInit() {
+    this.name = this.nameService.getName();
+  }
 }
